@@ -1,0 +1,125 @@
+import type { Project } from "@/types";
+
+export const projects: Project[] = [
+  {
+    id: "medinsight-ai",
+    title: "MedInsight AI",
+    tagline: "Medical Report Intelligence Platform",
+    categories: ["AI/ML", "Full Stack"],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "FastAPI", "Python", "PostgreSQL", "SQLAlchemy", "Docker"],
+    description:
+      "A full-stack AI platform for processing uploaded medical laboratory reports, extracting structured information, and supporting report analysis through a modular processing pipeline.",
+    problem:
+      "Lab reports arrive as unstructured PDFs and scans. MedInsight AI turns that raw paperwork into structured, queryable data through an OCR and extraction pipeline, backed by a persistent Postgres store.",
+    features: [
+      "Medical report upload",
+      "OCR processing",
+      "Structured data extraction",
+      "Report analysis",
+      "PostgreSQL persistence",
+      "Modular pipeline architecture",
+      "React frontend",
+      "FastAPI backend",
+      "Dockerized environment",
+    ],
+    image: "/projects/medinsight-ai.webp",
+    github: "https://github.com/faisalvanu18-eng/ai-medical-report-platform",
+  },
+  {
+    id: "ocuvision-ai",
+    title: "OcuVision AI",
+    tagline: "Retinal Disease Detection System",
+    categories: ["AI/ML", "Computer Vision"],
+    technologies: ["Python", "PyTorch", "EfficientNet-B0", "FastAPI", "Next.js", "React", "TypeScript", "Grad-CAM"],
+    description:
+      "A deep learning application that analyzes retinal fundus images and identifies eight categories of eye-related conditions.",
+    problem:
+      "Manual screening of fundus images is slow and requires specialist review. OcuVision AI classifies retinal images across eight condition categories using EfficientNet-B0 trained on the ODIR dataset, with Grad-CAM visualizations so predictions stay interpretable.",
+    features: [
+      "Retinal image upload",
+      "Deep learning classification",
+      "EfficientNet-B0 model",
+      "Trained on the ODIR dataset",
+      "Grad-CAM visualization",
+      "Risk assessment",
+      "Prediction history",
+      "Report generation",
+      "FastAPI backend",
+      "Web dashboard",
+    ],
+    image: "/projects/ocuvision-ai.webp",
+    github: "https://github.com/faisalvanu18-eng/eye-disease-detector",
+  },
+  {
+    id: "smartgridguard",
+    title: "SmartGridGuard",
+    tagline: "Explainable Electricity Theft Detection System",
+    categories: ["AI/ML"],
+    technologies: ["Python", "LightGBM", "Pandas", "NumPy", "Scikit-learn", "SHAP", "Streamlit"],
+    description:
+      "An explainable machine learning system that analyzes electricity consumption behavior, generates customer risk scores, and helps prioritize accounts for investigation.",
+    problem:
+      "Utilities need to flag anomalous consumption without a black-box model. SmartGridGuard engineers 88 behavioral features from consumption data, scores accounts with LightGBM, and explains every score with SHAP so investigators know exactly why an account was flagged.",
+    features: [
+      "Consumption pattern analysis",
+      "Feature engineering across 88 features",
+      "LightGBM classification",
+      "Customer risk scoring",
+      "SHAP explanations",
+      "Interactive dashboard",
+      "Risk-based filtering",
+      "Investigation prioritization",
+    ],
+    image: "/projects/smartgridguard.webp",
+    github: "https://github.com/faisalvanu18-eng/smartgridguard",
+  },
+  {
+    id: "intelliflow-ai",
+    title: "IntelliFlow AI",
+    tagline: "Intelligent Traffic Management & Signal Optimization",
+    categories: ["AI/ML", "Computer Vision", "Full Stack"],
+    technologies: ["Python", "YOLOv8", "OpenCV", "FastAPI", "React", "TypeScript", "PostgreSQL"],
+    description:
+      "An AI-powered traffic analysis platform that processes traffic videos, detects vehicles, analyzes traffic volume, and calculates optimized signal timings.",
+    problem:
+      "Fixed signal timings ignore real traffic conditions. IntelliFlow AI runs YOLOv8 vehicle detection over uploaded traffic video, deduplicates and classifies vehicles by direction, and turns volume analysis into optimized signal timing recommendations.",
+    features: [
+      "Traffic video upload",
+      "YOLOv8 vehicle detection",
+      "Vehicle classification",
+      "Direction detection",
+      "Vehicle deduplication",
+      "Traffic volume analysis",
+      "Signal timing optimization",
+      "PostgreSQL storage",
+      "React dashboard",
+      "FastAPI backend",
+    ],
+    image: "/projects/intelliflow-ai.webp",
+    github: "https://github.com/faisalvanu18-eng/intelliflow-ai",
+  },
+  {
+    id: "fnmart",
+    title: "FNMart",
+    tagline: "Full-Stack Grocery Delivery Platform",
+    categories: ["Mobile", "Full Stack"],
+    technologies: ["Flutter", "Dart", "Node.js", "Express.js", "GetX", "Razorpay"],
+    description:
+      "A grocery delivery mobile application with product browsing, shopping cart, checkout, order management, and payment integration.",
+    problem:
+      "A complete commerce flow, from browsing to checkout, built on a Flutter client with a GetX + MVC architecture against an Express REST API, with Razorpay handling payments end to end.",
+    features: [
+      "Product catalog & categories",
+      "Shopping cart",
+      "Checkout flow",
+      "Order management",
+      "Account functionality",
+      "REST API backend",
+      "GetX state management",
+      "MVC architecture",
+      "Razorpay payment integration",
+    ],
+    image: "/projects/fnmart.webp",
+    github: "https://github.com/faisalvanu18-eng/fnmart",
+  },
+];
