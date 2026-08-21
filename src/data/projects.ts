@@ -22,7 +22,7 @@ export const projects: Project[] = [
       "FastAPI backend",
       "Dockerized environment",
     ],
-    image: "/projects/medinsight-ai.webp",
+    image: import.meta.env.BASE_URL + "projects/medinsight-ai.webp",
     github: "https://github.com/faisalvanu18-eng/ai-medical-report-platform",
   },
   {
@@ -47,7 +47,7 @@ export const projects: Project[] = [
       "FastAPI backend",
       "Web dashboard",
     ],
-    image: "/projects/ocuvision-ai.webp",
+    image: import.meta.env.BASE_URL + "projects/ocuvision-ai.webp",
     github: "https://github.com/faisalvanu18-eng/eye-disease-detector",
   },
   {
@@ -70,7 +70,7 @@ export const projects: Project[] = [
       "Risk-based filtering",
       "Investigation prioritization",
     ],
-    image: "/projects/smartgridguard.webp",
+    image: import.meta.env.BASE_URL + "projects/smartgridguard.webp",
     github: "https://github.com/faisalvanu18-eng/smartgridguard",
   },
   {
@@ -95,7 +95,7 @@ export const projects: Project[] = [
       "React dashboard",
       "FastAPI backend",
     ],
-    image: "/projects/intelliflow-ai.webp",
+    image: import.meta.env.BASE_URL + "projects/intelliflow-ai.webp",
     github: "https://github.com/faisalvanu18-eng/intelliflow-ai",
   },
   {
@@ -119,7 +119,7 @@ export const projects: Project[] = [
       "MVC architecture",
       "Razorpay payment integration",
     ],
-    image: "/projects/fnmart.webp",
+    image: import.meta.env.BASE_URL + "projects/fnmart.webp",
     github: "https://github.com/faisalvanu18-eng/fnmart",
   },
 ];
