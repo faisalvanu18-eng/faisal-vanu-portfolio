@@ -9,7 +9,7 @@
 
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
@@ -26,13 +26,13 @@
   }
 
   ::selection {
-    background-color: rgba(79, 216, 201, 0.28);
-    color: #f4fbfa;
+    background-color: rgba(10, 132, 255, 0.2);
+    color: #0b1220;
   }
 
   /* Visible, on-brand keyboard focus ring everywhere */
   :focus-visible {
-    outline: 2px solid #4fd8c9;
+    outline: 2px solid #0a84ff;
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -41,38 +41,38 @@
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #05070c;
+    background: #eef1f7;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1b2339;
+    background: #c7d0de;
     border-radius: 999px;
-    border: 2px solid #05070c;
+    border: 2px solid #eef1f7;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #263250;
+    background: #aab6c8;
   }
 
   html {
-    scrollbar-color: #1b2339 #05070c;
+    scrollbar-color: #c7d0de #eef1f7;
   }
 }
 
 @layer utilities {
-  /* ---- Glassmorphism surface system (performance-tuned) --------------- */
+  /* ---- iOS liquid-glass surface system (light, performance-tuned) ----- */
   /* Real backdrop-blur is GPU-expensive, so we use it only on a few large
-     surfaces (nav, cards, modal) with a MODERATE radius, and give small
-     elements a "fake glass" look (translucent fill + border + highlight)
-     with NO blur — visually almost identical, far cheaper to paint. */
+     surfaces (nav, cards, modal, tab bar) with a MODERATE radius, and give
+     small elements a "fake glass" look (translucent fill + border) with NO
+     blur — visually almost identical, far cheaper to paint. */
 
-  /* Frosted floating bar (navbar, back-to-top) */
+  /* Frosted floating bar (top navbar, back-to-top) */
   .glass {
-    background: rgba(13, 20, 36, 0.55);
-    @apply border border-white/[0.1];
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.6);
+    @apply border border-white/70;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
     box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
-      0 8px 24px -14px rgba(5, 7, 12, 0.6);
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+      0 8px 24px -12px rgba(10, 22, 40, 0.18);
     will-change: transform;
   }
 
@@ -80,20 +80,34 @@
   .panel,
   .glass-card {
     position: relative;
-    background: rgba(17, 26, 44, 0.5);
-    @apply border border-white/[0.09];
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.72);
+    @apply border border-white/80;
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
     box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
-      0 10px 30px -20px rgba(5, 7, 12, 0.7);
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+      0 10px 30px -16px rgba(10, 22, 40, 0.16);
   }
 
   /* Small elements (pills, inputs, icon tiles) — NO blur for performance */
   .glass-soft {
-    background: rgba(255, 255, 255, 0.055);
-    @apply border border-white/[0.1];
-    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.65);
+    @apply border border-white/80;
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+      0 1px 2px 0 rgba(10, 22, 40, 0.05);
+  }
+
+  /* iOS-style floating bottom tab bar */
+  .tabbar-glass {
+    background: rgba(255, 255, 255, 0.7);
+    @apply border border-white/80;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.95),
+      0 12px 32px -8px rgba(10, 22, 40, 0.22);
+    will-change: transform;
   }
 
   .grid-overlay {

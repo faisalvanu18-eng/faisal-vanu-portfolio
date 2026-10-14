@@ -6,29 +6,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        void: "#05070C",
+        // Light iOS theme — token names kept the same so the whole app
+        // re-themes without touching every component.
+        void: "#EEF1F7", // page background (soft light gray-blue)
         navy: {
-          950: "#080B15",
-          900: "#0B111F",
-          800: "#111A2C",
-          700: "#182339",
-          600: "#233252",
+          950: "#FFFFFF", // brightest surface
+          900: "#F7F9FC",
+          800: "#EDF1F8",
+          700: "#DCE2EC", // borders / dividers
+          600: "#C7D0DE",
         },
         ink: {
-          100: "#EEF1F8",
-          300: "#AAB3C8",
-          500: "#75809A",
+          100: "#0B1220", // primary text (near-black)
+          300: "#49556B", // secondary text
+          500: "#8A94A6", // muted text
         },
         cyan: {
-          DEFAULT: "#4FD8C9",
-          soft: "#3BB6AD",
+          DEFAULT: "#0A84FF", // iOS system blue
+          soft: "#4AA8FF",
         },
         violet: {
-          DEFAULT: "#8E7FF2",
-          soft: "#6C63B5",
+          DEFAULT: "#5E5CE6", // iOS system indigo
+          soft: "#8E8DF0",
         },
         azure: {
-          DEFAULT: "#4C7EF3",
+          DEFAULT: "#0A84FF",
         },
       },
       fontFamily: {
@@ -38,16 +40,16 @@ export default {
       },
       backgroundImage: {
         "grid-pattern":
-          "linear-gradient(to right, rgba(148,163,184,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.06) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(10,22,40,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(10,22,40,0.04) 1px, transparent 1px)",
         "glow-cyan-violet":
-          "radial-gradient(circle at 30% 20%, rgba(79,216,201,0.14), transparent 45%), radial-gradient(circle at 75% 60%, rgba(142,127,242,0.14), transparent 45%)",
+          "radial-gradient(circle at 30% 20%, rgba(10,132,255,0.18), transparent 45%), radial-gradient(circle at 75% 60%, rgba(94,92,230,0.16), transparent 45%)",
       },
       backgroundSize: {
         grid: "56px 56px",
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(148,163,184,0.08), 0 20px 60px -20px rgba(79,216,201,0.15)",
-        "glow-violet": "0 0 0 1px rgba(148,163,184,0.08), 0 20px 60px -20px rgba(142,127,242,0.2)",
+        glow: "0 1px 0 0 rgba(255,255,255,0.6) inset, 0 10px 30px -12px rgba(10,22,40,0.18)",
+        "glow-violet": "0 1px 0 0 rgba(255,255,255,0.6) inset, 0 14px 40px -14px rgba(94,92,230,0.28)",
       },
       keyframes: {
         float: {

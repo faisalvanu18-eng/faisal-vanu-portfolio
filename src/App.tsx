@@ -3,7 +3,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
-import Navbar from "@/components/Navbar";
+import BottomTabBar from "@/components/BottomTabBar";
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
 import Skills from "@/sections/Skills";
@@ -18,9 +18,8 @@ export default function App() {
       <AnimatedBackground />
       <CustomCursor />
       <ScrollProgress />
-      <Navbar />
 
-      <main>
+      <main className="pb-28">
         <Hero />
         <About />
         <Skills />
@@ -31,6 +30,7 @@ export default function App() {
 
       <Footer />
       <BackToTop />
+      <BottomTabBar />
     </MotionConfig>
   );
 }

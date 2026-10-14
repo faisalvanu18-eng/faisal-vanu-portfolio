@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-center overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8"
+      className="relative flex min-h-[100svh] items-center overflow-hidden px-4 pb-20 pt-20 sm:px-6 lg:px-8"
     >
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
         <motion.div variants={container} initial="hidden" animate="show">

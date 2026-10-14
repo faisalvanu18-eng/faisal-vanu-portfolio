@@ -36,7 +36,7 @@ export default function ProjectCard({ project, index, onViewDetails }: ProjectCa
             title={project.title}
             className="transition-transform duration-500 group-hover:scale-[1.04]"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/10 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent" />
           <span className="glass-soft absolute left-4 top-4 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink-300">
             {project.categories[0]}
           </span>

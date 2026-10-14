@@ -131,7 +131,7 @@ export default function ContactForm() {
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           role="status"
-          className="flex items-start gap-2 text-sm text-emerald-300"
+          className="flex items-start gap-2 text-sm text-emerald-600"
         >
           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
           Your email app should now open with the message ready to send. If it doesn&apos;t open, email me directly

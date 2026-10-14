@@ -21,7 +21,7 @@ export default function BackToTop() {
           exit={{ opacity: 0, scale: 0.7, y: 10 }}
           whileHover={{ y: -3 }}
           transition={{ duration: 0.2 }}
-          className="glass fixed bottom-6 right-5 z-[60] flex h-11 w-11 items-center justify-center rounded-full text-ink-100 md:bottom-8 md:right-8"
+          className="glass fixed bottom-24 right-5 z-[60] flex h-11 w-11 items-center justify-center rounded-full text-ink-100 md:bottom-28 md:right-8"
         >
           <ArrowUp className="h-4 w-4" strokeWidth={2.25} />
         </motion.button>

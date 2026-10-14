@@ -6,12 +6,12 @@ export default function AnimatedBackground() {
 
       {/* two static color pools behind content (no animation = no repaint cost) */}
       <div
-        className="absolute -left-1/4 -top-1/4 h-[70vh] w-[70vh] rounded-full opacity-20 blur-[120px]"
-        style={{ background: "radial-gradient(circle, #4FD8C9 0%, transparent 70%)" }}
+        className="absolute -left-1/4 -top-1/4 h-[70vh] w-[70vh] rounded-full opacity-25 blur-[120px]"
+        style={{ background: "radial-gradient(circle, #0A84FF 0%, transparent 70%)" }}
       />
       <div
-        className="absolute -right-1/4 top-1/3 h-[60vh] w-[60vh] rounded-full opacity-[0.18] blur-[120px]"
-        style={{ background: "radial-gradient(circle, #8E7FF2 0%, transparent 70%)" }}
+        className="absolute -right-1/4 top-1/3 h-[60vh] w-[60vh] rounded-full opacity-20 blur-[120px]"
+        style={{ background: "radial-gradient(circle, #5E5CE6 0%, transparent 70%)" }}
       />
 
       {/* fine blueprint-style grid */}

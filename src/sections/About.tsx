@@ -80,16 +80,16 @@ export default function About() {
               </p>
               <p className="pl-4">
                 <span className="text-cyan">name</span>
-                <span className="text-ink-500">:</span> <span className="text-emerald-300">&quot;Faisal Vanu&quot;</span>
+                <span className="text-ink-500">:</span> <span className="text-emerald-600">&quot;Faisal Vanu&quot;</span>
                 <span className="text-ink-500">,</span>
               </p>
               <p className="pl-4">
                 <span className="text-cyan">focus</span>
                 <span className="text-ink-500">: [</span>
               </p>
-              <p className="pl-8 text-emerald-300">&quot;Software Development&quot;,</p>
-              <p className="pl-8 text-emerald-300">&quot;AI/ML&quot;,</p>
-              <p className="pl-8 text-emerald-300">&quot;Computer Vision&quot;</p>
+              <p className="pl-8 text-emerald-600">&quot;Software Development&quot;,</p>
+              <p className="pl-8 text-emerald-600">&quot;AI/ML&quot;,</p>
+              <p className="pl-8 text-emerald-600">&quot;Computer Vision&quot;</p>
               <p className="pl-4 text-ink-500">],</p>
               <p className="text-ink-500">{"};"}</p>
             </motion.div>

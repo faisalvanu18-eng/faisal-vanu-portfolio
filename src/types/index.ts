@@ -24,6 +24,7 @@ export interface SkillCategory {
 export interface NavItem {
   label: string;
   href: string;
+  icon: "home" | "about" | "skills" | "projects" | "education" | "contact";
 }
 
 export interface SocialLink {
