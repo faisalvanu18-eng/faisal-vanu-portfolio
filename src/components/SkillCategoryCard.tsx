@@ -22,7 +22,7 @@ export default function SkillCategoryCard({ category, index }: SkillCategoryCard
     >
       <div className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-gradient-to-br from-cyan/0 to-violet/0 opacity-0 blur-2xl transition-opacity duration-300 group-hover:from-cyan/20 group-hover:to-violet/20 group-hover:opacity-100" />
 
-      <div className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-cyan transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-105">
+      <div className="glass-soft relative flex h-11 w-11 items-center justify-center rounded-xl text-cyan transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-105">
         {Icon && <Icon className="h-5 w-5" strokeWidth={1.75} />}
       </div>
 

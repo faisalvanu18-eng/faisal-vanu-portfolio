@@ -24,7 +24,7 @@ export default function ResumeButton() {
 
   if (available === false) {
     return (
-      <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-6 py-3 text-sm text-ink-500">
+      <span className="glass-soft inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm text-ink-500">
         <FileClock className="h-4 w-4" strokeWidth={2} />
         Resume coming soon
       </span>

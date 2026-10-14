@@ -6,14 +6,14 @@ export default function AnimatedBackground() {
 
       {/* slow-drifting secondary glow for a whisper of life without being a spinner */}
       <div
-        className="absolute -left-1/4 -top-1/4 h-[70vh] w-[70vh] rounded-full opacity-[0.10] blur-[110px] animate-gradient-shift"
+        className="absolute -left-1/4 -top-1/4 h-[70vh] w-[70vh] rounded-full opacity-20 blur-[110px] animate-gradient-shift"
         style={{
           background: "radial-gradient(circle, #4FD8C9 0%, transparent 70%)",
           backgroundSize: "200% 200%",
         }}
       />
       <div
-        className="absolute -right-1/4 top-1/3 h-[60vh] w-[60vh] rounded-full opacity-[0.09] blur-[110px] animate-gradient-shift"
+        className="absolute -right-1/4 top-1/3 h-[60vh] w-[60vh] rounded-full opacity-[0.18] blur-[110px] animate-gradient-shift"
         style={{
           background: "radial-gradient(circle, #8E7FF2 0%, transparent 70%)",
           backgroundSize: "200% 200%",

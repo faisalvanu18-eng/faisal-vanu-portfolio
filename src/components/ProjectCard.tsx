@@ -28,7 +28,7 @@ export default function ProjectCard({ project, index, onViewDetails }: ProjectCa
     >
       <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan/0 via-violet/0 to-cyan/0 opacity-0 transition-opacity duration-300 group-hover:from-cyan/50 group-hover:via-violet/30 group-hover:to-cyan/40 group-hover:opacity-100" />
 
-      <div className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-navy-800/80 shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset] transition-transform duration-300 group-hover:-translate-y-1.5">
+      <div className="glass-card relative flex h-full flex-col overflow-hidden rounded-2xl transition-transform duration-300 group-hover:-translate-y-1.5">
         <div className="relative aspect-[16/10] w-full overflow-hidden">
           <ProjectImage
             src={project.image}
@@ -37,7 +37,7 @@ export default function ProjectCard({ project, index, onViewDetails }: ProjectCa
             className="transition-transform duration-500 group-hover:scale-[1.04]"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/10 to-transparent" />
-          <span className="absolute left-4 top-4 rounded-full border border-white/10 bg-navy-950/70 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink-300 backdrop-blur">
+          <span className="glass-soft absolute left-4 top-4 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink-300">
             {project.categories[0]}
           </span>
           <a
@@ -46,7 +46,7 @@ export default function ProjectCard({ project, index, onViewDetails }: ProjectCa
             rel="noopener noreferrer"
             aria-label={`Open ${project.title} on GitHub`}
             data-cursor-hover
-            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-navy-950/70 text-ink-100 backdrop-blur transition-transform duration-300 group-hover:-translate-y-1 group-hover:text-cyan hover:-translate-y-1 hover:text-cyan"
+            className="glass-soft absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-ink-100 transition-transform duration-300 group-hover:-translate-y-1 group-hover:text-cyan hover:-translate-y-1 hover:text-cyan"
           >
             <Github className="h-4 w-4" strokeWidth={2} />
           </a>

@@ -40,7 +40,7 @@ export default function Education() {
           >
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-cyan">
+                <div className="glass-soft flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-cyan">
                   <GraduationCap className="h-5 w-5" strokeWidth={1.75} />
                 </div>
                 <div>
@@ -48,7 +48,7 @@ export default function Education() {
                   <p className="mt-1 text-sm text-ink-300">{education.field}</p>
                 </div>
               </div>
-              <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-mono text-xs text-ink-300">
+              <span className="glass-soft rounded-full px-3 py-1 font-mono text-xs text-ink-300">
                 {education.year}
               </span>
             </div>

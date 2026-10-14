@@ -70,7 +70,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           transition={{ duration: 0.2 }}
         >
           <motion.div
-            className="absolute inset-0 bg-navy-950/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-navy-950/60 backdrop-blur-md"
             onClick={onClose}
             aria-hidden="true"
           />
@@ -84,7 +84,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 10 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex max-h-[88vh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-navy-900 shadow-glow-violet"
+            className="relative flex max-h-[88vh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-white/[0.12] bg-navy-900/70 backdrop-blur-2xl shadow-glow-violet"
           >
             <button
               ref={closeButtonRef}
@@ -92,7 +92,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               onClick={onClose}
               aria-label="Close project details"
               data-cursor-hover
-              className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-navy-950/70 text-ink-100 backdrop-blur transition-colors hover:text-cyan"
+              className="glass-soft absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full text-ink-100 transition-colors hover:text-cyan"
             >
               <X className="h-4 w-4" strokeWidth={2} />
             </button>

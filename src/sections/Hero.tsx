@@ -26,7 +26,7 @@ export default function Hero() {
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.div
             variants={item}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5"
+            className="glass-soft mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />

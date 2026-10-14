@@ -58,12 +58,40 @@
 }
 
 @layer utilities {
+  /* ---- Glassmorphism surface system ---------------------------------- */
+  /* Frosted navigation / floating bars */
   .glass {
-    @apply bg-navy-900/60 backdrop-blur-xl border border-white/[0.06];
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+    @apply backdrop-blur-2xl border border-white/[0.12];
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+      0 8px 32px -12px rgba(5, 7, 12, 0.6);
   }
 
-  .panel {
-    @apply bg-navy-800/70 border border-white/[0.06];
+  /* Primary content card / panel surface */
+  .panel,
+  .glass-card {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.015)
+    );
+    @apply backdrop-blur-2xl border border-white/[0.1];
+    box-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+      0 10px 40px -18px rgba(5, 7, 12, 0.7);
+  }
+
+  /* Smaller frosted elements (pills, inputs, icon tiles) */
+  .glass-soft {
+    background: rgba(255, 255, 255, 0.05);
+    @apply backdrop-blur-md border border-white/[0.1];
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
   }
 
   .grid-overlay {

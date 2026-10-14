@@ -8,9 +8,9 @@ interface ChipProps {
 }
 
 const toneClasses: Record<NonNullable<ChipProps["tone"]>, string> = {
-  default: "border-white/10 bg-white/[0.03] text-ink-300",
-  cyan: "border-cyan/25 bg-cyan/[0.06] text-cyan",
-  violet: "border-violet/25 bg-violet/[0.08] text-violet",
+  default: "border-white/10 bg-white/[0.05] text-ink-300 backdrop-blur-md",
+  cyan: "border-cyan/25 bg-cyan/[0.08] text-cyan backdrop-blur-md",
+  violet: "border-violet/25 bg-violet/[0.1] text-violet backdrop-blur-md",
 };
 
 export default function Chip({ children, tone = "default", className }: ChipProps) {

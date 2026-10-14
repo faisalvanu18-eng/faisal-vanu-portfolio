@@ -70,7 +70,7 @@ interface ContactRowProps {
 function ContactRow({ icon: Icon, label, value, href }: ContactRowProps) {
   const content = (
     <div className="panel flex items-center gap-4 rounded-2xl p-5 transition-colors duration-200 hover:border-cyan/30">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-cyan">
+      <div className="glass-soft flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-cyan">
         <Icon className="h-4 w-4" strokeWidth={1.75} />
       </div>
       <div>
