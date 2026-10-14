@@ -58,40 +58,42 @@
 }
 
 @layer utilities {
-  /* ---- Glassmorphism surface system ---------------------------------- */
-  /* Frosted navigation / floating bars */
+  /* ---- Glassmorphism surface system (performance-tuned) --------------- */
+  /* Real backdrop-blur is GPU-expensive, so we use it only on a few large
+     surfaces (nav, cards, modal) with a MODERATE radius, and give small
+     elements a "fake glass" look (translucent fill + border + highlight)
+     with NO blur — visually almost identical, far cheaper to paint. */
+
+  /* Frosted floating bar (navbar, back-to-top) */
   .glass {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0.02)
-    );
-    @apply backdrop-blur-2xl border border-white/[0.12];
+    background: rgba(13, 20, 36, 0.55);
+    @apply border border-white/[0.1];
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
-      0 8px 32px -12px rgba(5, 7, 12, 0.6);
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+      0 8px 24px -14px rgba(5, 7, 12, 0.6);
+    will-change: transform;
   }
 
-  /* Primary content card / panel surface */
+  /* Primary content card / panel */
   .panel,
   .glass-card {
     position: relative;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.07),
-      rgba(255, 255, 255, 0.015)
-    );
-    @apply backdrop-blur-2xl border border-white/[0.1];
+    background: rgba(17, 26, 44, 0.5);
+    @apply border border-white/[0.09];
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
-      0 10px 40px -18px rgba(5, 7, 12, 0.7);
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+      0 10px 30px -20px rgba(5, 7, 12, 0.7);
   }
 
-  /* Smaller frosted elements (pills, inputs, icon tiles) */
+  /* Small elements (pills, inputs, icon tiles) — NO blur for performance */
   .glass-soft {
-    background: rgba(255, 255, 255, 0.05);
-    @apply backdrop-blur-md border border-white/[0.1];
-    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.055);
+    @apply border border-white/[0.1];
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
   }
 
   .grid-overlay {

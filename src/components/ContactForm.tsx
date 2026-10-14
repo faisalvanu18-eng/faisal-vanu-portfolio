@@ -11,7 +11,7 @@ const initialValues: ContactFormValues = { name: "", email: "", subject: "", mes
 type Status = "idle" | "submitting" | "success" | "error";
 
 const fieldClasses =
-  "w-full rounded-xl border border-white/10 bg-white/[0.05] backdrop-blur-md px-4 py-3 text-sm text-ink-100 placeholder:text-ink-500 outline-none transition-colors duration-200 focus:border-cyan/50";
+  "w-full rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-ink-100 placeholder:text-ink-500 outline-none transition-colors duration-200 focus:border-cyan/50";
 
 export default function ContactForm() {
   const [values, setValues] = useState<ContactFormValues>(initialValues);

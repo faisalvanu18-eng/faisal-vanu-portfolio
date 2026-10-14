@@ -37,7 +37,7 @@ export default function MobileMenu({ open, onClose, activeId }: MobileMenuProps)
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[95] flex flex-col bg-navy-950/70 backdrop-blur-2xl md:hidden"
+          className="fixed inset-0 z-[95] flex flex-col bg-navy-950/95 md:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation"
