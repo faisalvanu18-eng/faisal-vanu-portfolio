@@ -6,31 +6,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Light iOS theme — token names kept the same so the whole app
-        // re-themes without touching every component.
-        void: "#EEF1F7", // page background (soft light gray-blue)
+        // Tokens are driven by CSS variables (defined in index.css) so the
+        // whole app re-themes between light & dark without touching components.
+        void: "rgb(var(--c-void) / <alpha-value>)", // page background
         navy: {
-          950: "#FFFFFF", // brightest surface
-          900: "#F7F9FC",
-          800: "#EDF1F8",
-          700: "#DCE2EC", // borders / dividers
-          600: "#C7D0DE",
+          950: "rgb(var(--c-navy-950) / <alpha-value>)", // brightest surface
+          900: "rgb(var(--c-navy-900) / <alpha-value>)",
+          800: "rgb(var(--c-navy-800) / <alpha-value>)",
+          700: "rgb(var(--c-navy-700) / <alpha-value>)", // borders / dividers
+          600: "rgb(var(--c-navy-600) / <alpha-value>)",
         },
         ink: {
-          100: "#0B1220", // primary text (near-black)
-          300: "#49556B", // secondary text
-          500: "#8A94A6", // muted text
+          100: "rgb(var(--c-ink-100) / <alpha-value>)", // primary text
+          300: "rgb(var(--c-ink-300) / <alpha-value>)", // secondary text
+          500: "rgb(var(--c-ink-500) / <alpha-value>)", // muted text
         },
         cyan: {
-          DEFAULT: "#0A84FF", // iOS system blue
-          soft: "#4AA8FF",
+          DEFAULT: "rgb(var(--c-cyan) / <alpha-value>)", // iOS system blue
+          soft: "rgb(var(--c-cyan-soft) / <alpha-value>)",
         },
         violet: {
-          DEFAULT: "#5E5CE6", // iOS system indigo
-          soft: "#8E8DF0",
+          DEFAULT: "rgb(var(--c-violet) / <alpha-value>)", // iOS system indigo
+          soft: "rgb(var(--c-violet-soft) / <alpha-value>)",
         },
         azure: {
-          DEFAULT: "#0A84FF",
+          DEFAULT: "rgb(var(--c-cyan) / <alpha-value>)",
         },
       },
       fontFamily: {

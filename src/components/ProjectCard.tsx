@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import type { Project } from "@/types";
 import ProjectImage from "@/components/ProjectImage";
@@ -16,14 +17,27 @@ export default function ProjectCard({ project, index, onViewDetails }: ProjectCa
   const visibleTags = project.technologies.slice(0, MAX_VISIBLE_TAGS);
   const remaining = project.technologies.length - visibleTags.length;
 
+  // Drive the entrance from an explicit in-view flag instead of `whileInView`.
+  // `once: true` + a small negative margin reliably fires on scroll AND when
+  // the section is jumped to from the bottom tab bar (the card is already in
+  // view, so it animates immediately rather than staying stuck/invisible).
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "0px 0px -12% 0px" });
+
   return (
     <motion.div
+      ref={ref}
       layout
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      exit={{ opacity: 0, y: 12 }}
-      transition={{ duration: 0.5, delay: Math.min(index, 4) * 0.07, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, y: 24, scale: 0.98 }}
+      animate={inView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 24, scale: 0.98 }}
+      exit={{ opacity: 0, y: 12, scale: 0.98 }}
+      transition={{
+        type: "spring",
+        stiffness: 520,
+        damping: 40,
+        mass: 0.6,
+        delay: Math.min(index, 5) * 0.05,
+      }}
       className="group relative rounded-2xl p-px"
     >
       <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan/0 via-violet/0 to-cyan/0 opacity-0 transition-opacity duration-300 group-hover:from-cyan/50 group-hover:via-violet/30 group-hover:to-cyan/40 group-hover:opacity-100" />
@@ -36,7 +50,7 @@ export default function ProjectCard({ project, index, onViewDetails }: ProjectCa
             title={project.title}
             className="transition-transform duration-500 group-hover:scale-[1.04]"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent dark:from-black/40" />
           <span className="glass-soft absolute left-4 top-4 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink-300">
             {project.categories[0]}
           </span>

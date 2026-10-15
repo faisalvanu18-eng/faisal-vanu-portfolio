@@ -9,3 +9,6 @@ dist-ssr
 
 *.log
 npm-debug.log*
+
+# Firebase local deploy cache
+.firebase/

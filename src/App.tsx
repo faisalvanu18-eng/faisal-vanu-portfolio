@@ -14,7 +14,10 @@ import Footer from "@/sections/Footer";
 
 export default function App() {
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig
+      reducedMotion="user"
+      transition={{ type: "spring", stiffness: 480, damping: 38, mass: 0.6 }}
+    >
       <AnimatedBackground />
       <CustomCursor />
       <ScrollProgress />

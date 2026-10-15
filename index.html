@@ -3,7 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#EEF1F7" />
+    <!-- theme-color is kept in sync with the active light/dark theme by the script below -->
+    <meta name="theme-color" content="#EEF1F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#05070D" media="(prefers-color-scheme: dark)" />
+
+    <!-- Follow the OS / phone light-dark preference (iOS-style). Runs before paint to avoid a flash. -->
+    <script>
+      (function () {
+        try {
+          var mq = window.matchMedia("(prefers-color-scheme: dark)");
+          var apply = function (isDark) {
+            document.documentElement.classList.toggle("dark", isDark);
+            document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+          };
+          apply(mq.matches);
+          // React to the user flipping their system theme live.
+          var onChange = function (e) { apply(e.matches); };
+          if (mq.addEventListener) mq.addEventListener("change", onChange);
+          else if (mq.addListener) mq.addListener(onChange);
+        } catch (e) {}
+      })();
+    </script>
 
     <title>Faisal Vanu | Software Developer | AI/ML Enthusiast</title>
     <meta

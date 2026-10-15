@@ -3,13 +3,69 @@
 @tailwind utilities;
 
 @layer base {
+  /* ---- Light theme tokens (default) ---- */
+  :root {
+    --c-void: 238 241 247;      /* #EEF1F7 page bg */
+    --c-navy-950: 255 255 255;  /* brightest surface */
+    --c-navy-900: 247 249 252;
+    --c-navy-800: 237 241 248;
+    --c-navy-700: 220 226 236;  /* borders */
+    --c-navy-600: 199 208 222;
+    --c-ink-100: 11 18 32;      /* primary text */
+    --c-ink-300: 73 85 107;     /* secondary text */
+    --c-ink-500: 138 148 166;   /* muted text */
+    --c-cyan: 10 132 255;       /* iOS blue */
+    --c-cyan-soft: 74 168 255;
+    --c-violet: 94 92 230;      /* iOS indigo */
+    --c-violet-soft: 142 141 240;
+
+    /* glass surface tuning (light) */
+    --glass-fill: 255 255 255;
+    --glass-fill-strong: 255 255 255;
+    --glass-border: 255 255 255;
+    --glass-highlight: 255 255 255;
+    --glass-shadow: 10 22 40;
+    --grid-line: 10 22 40;
+    --scrollbar-track: 238 241 247;
+    --scrollbar-thumb: 199 208 222;
+    --scrollbar-thumb-hover: 170 182 200;
+  }
+
+  /* ---- Dark theme tokens (applied when <html class="dark">) ---- */
+  .dark {
+    --c-void: 5 7 13;           /* near-black page bg */
+    --c-navy-950: 22 26 36;     /* brightest surface */
+    --c-navy-900: 18 22 31;
+    --c-navy-800: 15 19 27;
+    --c-navy-700: 42 49 63;     /* borders */
+    --c-navy-600: 58 67 84;
+    --c-ink-100: 237 240 247;   /* primary text */
+    --c-ink-300: 165 176 194;   /* secondary text */
+    --c-ink-500: 122 133 153;   /* muted text */
+    --c-cyan: 10 132 255;       /* iOS blue */
+    --c-cyan-soft: 94 177 255;
+    --c-violet: 125 122 255;    /* iOS indigo (brighter for dark) */
+    --c-violet-soft: 160 158 255;
+
+    /* glass surface tuning (dark) */
+    --glass-fill: 30 36 48;
+    --glass-fill-strong: 32 38 52;
+    --glass-border: 255 255 255;
+    --glass-highlight: 255 255 255;
+    --glass-shadow: 0 0 0;
+    --grid-line: 255 255 255;
+    --scrollbar-track: 15 19 27;
+    --scrollbar-thumb: 58 67 84;
+    --scrollbar-thumb-hover: 80 90 110;
+  }
+
   * {
     @apply border-navy-700;
   }
 
   html {
     scroll-behavior: smooth;
-    color-scheme: light;
+    color-scheme: light dark;
   }
 
   body {
@@ -26,13 +82,13 @@
   }
 
   ::selection {
-    background-color: rgba(10, 132, 255, 0.2);
-    color: #0b1220;
+    background-color: rgb(var(--c-cyan) / 0.22);
+    color: rgb(var(--c-ink-100));
   }
 
   /* Visible, on-brand keyboard focus ring everywhere */
   :focus-visible {
-    outline: 2px solid #0a84ff;
+    outline: 2px solid rgb(var(--c-cyan));
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -41,19 +97,19 @@
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #eef1f7;
+    background: rgb(var(--scrollbar-track));
   }
   ::-webkit-scrollbar-thumb {
-    background: #c7d0de;
+    background: rgb(var(--scrollbar-thumb));
     border-radius: 999px;
-    border: 2px solid #eef1f7;
+    border: 2px solid rgb(var(--scrollbar-track));
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #aab6c8;
+    background: rgb(var(--scrollbar-thumb-hover));
   }
 
   html {
-    scrollbar-color: #c7d0de #eef1f7;
+    scrollbar-color: rgb(var(--scrollbar-thumb)) rgb(var(--scrollbar-track));
   }
 }
 
@@ -66,13 +122,13 @@
 
   /* Frosted floating bar (top navbar, back-to-top) */
   .glass {
-    background: rgba(255, 255, 255, 0.6);
-    @apply border border-white/70;
+    background: rgb(var(--glass-fill) / 0.6);
+    border: 1px solid rgb(var(--glass-border) / 0.7);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
-      0 8px 24px -12px rgba(10, 22, 40, 0.18);
+      inset 0 1px 0 0 rgb(var(--glass-highlight) / 0.9),
+      0 8px 24px -12px rgb(var(--glass-shadow) / 0.18);
     will-change: transform;
   }
 
@@ -80,38 +136,40 @@
   .panel,
   .glass-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.72);
-    @apply border border-white/80;
+    background: rgb(var(--glass-fill-strong) / 0.72);
+    border: 1px solid rgb(var(--glass-border) / 0.8);
     backdrop-filter: blur(14px) saturate(160%);
     -webkit-backdrop-filter: blur(14px) saturate(160%);
     box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
-      0 10px 30px -16px rgba(10, 22, 40, 0.16);
+      inset 0 1px 0 0 rgb(var(--glass-highlight) / 0.9),
+      0 10px 30px -16px rgb(var(--glass-shadow) / 0.16);
   }
 
   /* Small elements (pills, inputs, icon tiles) — NO blur for performance */
   .glass-soft {
-    background: rgba(255, 255, 255, 0.65);
-    @apply border border-white/80;
+    background: rgb(var(--glass-fill) / 0.65);
+    border: 1px solid rgb(var(--glass-border) / 0.8);
     box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
-      0 1px 2px 0 rgba(10, 22, 40, 0.05);
+      inset 0 1px 0 0 rgb(var(--glass-highlight) / 0.9),
+      0 1px 2px 0 rgb(var(--glass-shadow) / 0.05);
   }
 
   /* iOS-style floating bottom tab bar */
   .tabbar-glass {
-    background: rgba(255, 255, 255, 0.7);
-    @apply border border-white/80;
+    background: rgb(var(--glass-fill) / 0.7);
+    border: 1px solid rgb(var(--glass-border) / 0.8);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.95),
-      0 12px 32px -8px rgba(10, 22, 40, 0.22);
+      inset 0 1px 0 0 rgb(var(--glass-highlight) / 0.95),
+      0 12px 32px -8px rgb(var(--glass-shadow) / 0.22);
     will-change: transform;
   }
 
   .grid-overlay {
-    background-image: theme("backgroundImage.grid-pattern");
+    background-image:
+      linear-gradient(to right, rgb(var(--grid-line) / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--grid-line) / 0.04) 1px, transparent 1px);
     background-size: theme("backgroundSize.grid");
   }
 

@@ -11,7 +11,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/faisal-vanu-5782b226a",
   instagram: "https://www.instagram.com/_faisal_vanu/",
   instagramHandle: "_faisal_vanu",
-  site: "https://www.faisalvanu.com",
+  site: "https://www.faisalvanu.online",
   resumeUrl: import.meta.env.BASE_URL + "resume/Faisal-Vanu-Resume.pdf",
   heroSupportingText:
     "Computer Science Engineering graduate specializing in Artificial Intelligence and Machine Learning, building full-stack, mobile, and AI/ML applications with a focus on practical software solutions.",

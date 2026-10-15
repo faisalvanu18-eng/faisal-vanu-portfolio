@@ -48,7 +48,7 @@ export default function Projects() {
                   <motion.span
                     layoutId="filter-active-bg"
                     className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan to-violet"
-                    transition={{ type: "spring", stiffness: 400, damping: 34 }}
+                    transition={{ type: "spring", stiffness: 520, damping: 38, mass: 0.6 }}
                   />
                 )}
                 {!isActive && <span className="absolute inset-0 rounded-full border border-white/10" />}
@@ -69,8 +69,8 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          transition={{ type: "spring", stiffness: 480, damping: 40, mass: 0.6 }}
           className="panel mt-14 rounded-2xl p-7 sm:p-9"
         >
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
